@@ -5,7 +5,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 export default function CountriesPage() {
 
     const currLocation = useLocation()
-    console.log(currLocation)
+    console.log('location', currLocation)
 
     return(
         <Box>
@@ -21,7 +21,12 @@ export default function CountriesPage() {
                 <li>
                     <Link to='germany/'>Germany</Link>
                 </li>
+                <li>
+                    <Link to='?country=belgium'>Belgium</Link>
+                </li>
             </ul>
+
+            <hr />
 
             <Outlet />
         </Box>
