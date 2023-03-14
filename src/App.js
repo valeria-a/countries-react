@@ -45,8 +45,8 @@ function App() {
                     setTimeLeft(seconds)
                   }}/>} 
           />
-          {/* <Route path="jokes/" element={<PollingJokes />}/> */}
-          <Route path="jokes/" element={<PollJokesAsyncAwait2 />}/>
+          <Route path="jokes/" element={<PollingJokes />}/>
+          {/* <Route path="jokes/" element={<PollJokesAsyncAwait2 />}/> */}
           
         </Route>
       </Routes>
