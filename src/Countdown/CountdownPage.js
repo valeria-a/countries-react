@@ -1,16 +1,17 @@
 import { Box } from "@mui/system";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CountdownContext } from "../CountdownContext";
 import Countdown from "./Countdown";
 
-export default function CountdownPage({onSecondsSubmitted, timeLeft}) {
+export default function CountdownPage() {
     const [secondsInput, setSecondsInput] = useState("")
+    const timeLeft = useContext(CountdownContext)
   
     return (
         <Box>
             <form 
                 onSubmit={(event) => {
                     event.preventDefault()
-                    onSecondsSubmitted(secondsInput)
                 }} 
             >
                 <input type='text' 
@@ -24,9 +25,8 @@ export default function CountdownPage({onSecondsSubmitted, timeLeft}) {
                 </button>
             </form>
             
-            {timeLeft > 0 &&
-                <Countdown timeLeft={timeLeft} />
-            }
+            <Countdown />
+
             
         </Box>
     )

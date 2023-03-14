@@ -1,8 +1,12 @@
 import { List, ListItem, ListItemButton } from "@mui/material";
 import { Box } from "@mui/system";
+import { useContext } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { CountdownContext } from "../CountdownContext";
 
 export default function CountriesPage() {
+
+    const timeLeft = useContext(CountdownContext)
 
     const currLocation = useLocation()
     console.log('location', currLocation)
@@ -28,7 +32,13 @@ export default function CountriesPage() {
 
             <hr />
 
-            <Outlet />
+            <p>Countdown: {timeLeft}</p>
+
+            <hr />
+
+            <CountdownContext.Provider value={111}>
+                <Outlet />
+            </CountdownContext.Provider>
         </Box>
     )
 }

@@ -1,9 +1,11 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useLocation, useParams } from "react-router-dom"
+import { CountdownContext } from "../CountdownContext"
 
 export default function CountryDetails() {
 
+    const timeLeft = useContext(CountdownContext)
     const [loading, setLoading] = useState(false)
 
     const urlParams = useParams()
@@ -47,6 +49,8 @@ export default function CountryDetails() {
             {!loading && countryData && 
                 <p>Official name: {countryData.name.official}</p>    
             }
+            <hr/>
+            <p>Countdown: {timeLeft}</p>
         </>
 
     )
