@@ -2,3 +2,7 @@
     color: white;
     text-decoration: none;
 }
+
+.active-nav-link {
+    text-decoration: underline;
+}

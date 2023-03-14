@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import CountriesPage from './Countries/CountriesPage';
 import CountryDetails from './Countries/CountryDetails';
+import CountdownPage from './Countdown/CountdownPage';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="countries/" element={<CountriesPage />}>
               <Route path=":countryId/" element={ <CountryDetails />}/>
           </Route>
+          <Route path="countdown/" element={<CountdownPage />} />
         </Route>
       </Routes>
   )
