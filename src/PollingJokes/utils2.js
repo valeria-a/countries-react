@@ -3,7 +3,7 @@
 
 import axios from "axios"
 
-// this won't work!
+
 export default async function getJoke() {
     console.log("getJoke: Sending request for joke")
     const response = await axios.get("https://api.chucknorris.io/jokes/random")

@@ -15,16 +15,18 @@ export default function PollingJokes() {
                     if (response.status === 200) {
                         setJoke(response.data.value)
                     } else {
+                        console.log('inside else', response.statusText)
                         throw response.statusText
                     }
                 })
                 .catch((error) => {
-                    setErrorMsg(error)
+                    setErrorMsg(error.message)
                 })
+                console.log('hi')
             }, 5000
         )
         // no clean-up causes a LOT of trouble!
-        // return () => clearInterval(intervalId)
+        return () => clearInterval(intervalId)
         
     }, [])
 

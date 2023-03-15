@@ -7,7 +7,7 @@ export default function PollJokesAsyncAwait2() {
     const [errorMsg, setErrorMsg] = useState("")
 
     useEffect(() => {
-        async function fetchJoke() {
+         async function fetchJoke() {
             try {
                 // You can await here
                 console.log('PollJokesAsyncAwait1: Calling getJoke()')
@@ -18,8 +18,8 @@ export default function PollJokesAsyncAwait2() {
                 console.error(error)
                 setErrorMsg(error.message)
             }
-          }
-          fetchJoke();
+           }
+           fetchJoke();
     } , [])
 
 

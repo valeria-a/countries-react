@@ -54,6 +54,16 @@ export default function Layout() {
                         Jokes
                     </NavLink>
                 </MenuItem>
+
+                <MenuItem>
+                    <NavLink to='ip/'
+                            className='nav-link'
+                            style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                      }>
+                        IP
+                    </NavLink>
+                </MenuItem>
                 </Toolbar>
             </AppBar>
 

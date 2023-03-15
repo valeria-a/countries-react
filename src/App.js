@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import PollingJokes from './PollingJokes/PollingJokes';
 import PollJokesAsyncAwait1 from './PollingJokes/PollJokesAsyncAwait1';
 import PollJokesAsyncAwait2 from './PollingJokes/PollJokesAsyncAwait2';
+import Ip from './Ip/Ip';
 
 
 function App() {
@@ -46,8 +47,9 @@ function App() {
                     setTimeLeft(seconds)
                   }}/>} 
           />
-          <Route path="jokes/" element={<PollingJokes />}/>
-          {/* <Route path="jokes/" element={<PollJokesAsyncAwait2 />}/> */}
+          {/* <Route path="jokes/" element={<PollingJokes />}/> */}
+          <Route path="jokes/" element={<PollJokesAsyncAwait2 />}/>
+          <Route path="ip/" element={<Ip />}/>
           
         </Route>
       </Routes>
