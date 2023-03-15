@@ -35,13 +35,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home timeLeft={timeLeft} />} />
           <Route path="countries/" element={<CountriesPage />}>
               <Route path=":countryId/" element={ <CountryDetails />}/>
           </Route>
           <Route  path="countdown/" 
-                  element={<CountdownPage timeLeft={timeLeft} 
-                  onSecondsSubmitted={(seconds) => {
+                  element={
+                  <CountdownPage timeLeft={timeLeft} 
+                    onSecondsSubmitted={(seconds) => {
                     setTimeLeft(seconds)
                   }}/>} 
           />
