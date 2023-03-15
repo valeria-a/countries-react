@@ -6,7 +6,7 @@ import { CountdownContext } from "../CountdownContext";
 
 export default function CountriesPage() {
 
-    const timeLeft = useContext(CountdownContext)
+    const {timeLeft, ...rest} = useContext(CountdownContext)
 
     const currLocation = useLocation()
     console.log('location', currLocation)

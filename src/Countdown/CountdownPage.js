@@ -5,13 +5,14 @@ import Countdown from "./Countdown";
 
 export default function CountdownPage() {
     const [secondsInput, setSecondsInput] = useState("")
-    const timeLeft = useContext(CountdownContext)
+    const {timeLeft, startCountdown} = useContext(CountdownContext)
   
     return (
         <Box>
             <form 
                 onSubmit={(event) => {
                     event.preventDefault()
+                    startCountdown(secondsInput)
                 }} 
             >
                 <input type='text' 

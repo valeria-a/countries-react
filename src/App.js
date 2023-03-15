@@ -10,15 +10,37 @@ import PollingJokes from './PollingJokes/PollingJokes';
 import PollJokesAsyncAwait1 from './PollingJokes/PollJokesAsyncAwait1';
 import PollJokesAsyncAwait2 from './PollingJokes/PollJokesAsyncAwait2';
 
-import { useContext } from 'react';
 import { CountdownContext } from './CountdownContext.js';
 
 
 function App() {
 
+  const [timeLeft, setTimeLeft] = useState(0);
+
+  useEffect(() => {
+      if (timeLeft === 0) {
+        return
+      }
+      console.log('setting timer', timeLeft)
+      const timerId = setTimeout(() => {
+          setTimeLeft((t) => t - 1)
+    }, 1000);
+  
+  // we have to provide clean-up function to stop interval/timer!
+    return () => {
+      console.log('calling clearTimeout for timerId', timerId)
+      clearTimeout(timerId)
+    };
+  }, [timeLeft]); 
+
+
+  const startCountdown = (seconds) => {
+    setTimeLeft(seconds)
+  }
+
   return (
 
-    <CountdownContext.Provider value={10}>
+    <CountdownContext.Provider value={{timeLeft, startCountdown}}>
       <Routes>
           <Route path="/" element={<Layout />}>
           

@@ -3,7 +3,7 @@ import { CountdownContext } from "../CountdownContext"
 
 export default function Countdown() {
 
-    const timeLeft = useContext(CountdownContext)
+    const {timeLeft, ...rest} = useContext(CountdownContext)
 
     if (timeLeft > 0) {
       return (
